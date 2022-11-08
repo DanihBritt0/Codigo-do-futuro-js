@@ -1,0 +1,47 @@
+<script>
+let  nome = prompt ( "Digite o nome" )
+
+let  valor = Number ( prompt ( `
+    Olá ${ nome }
+    Digite o valor que você tem para viagem
+` ) )
+
+let  opcaoViagem  =  parseInt ( prompt ( `
+    Escolha um dos destinos abaixo:
+    1) Disney
+    2) Madri
+    3) Maceió
+    4) Ribeirão Preto
+` ) )
+
+var valorViagem  =  0
+
+switch ( opcaoViagem )  {
+  caso  1 :
+    valorViagem  =  15000
+    quebrar ;
+  caso  2 :
+    valorViagem  =  12000
+    quebrar ;
+  caso  3 :
+    valorViagem  =  8000
+    quebrar ;
+  caso  4 :
+    valorViagem  =  5000
+    quebrar ;
+}
+
+if ( valorViagem  <  1 ) {
+  alert ( "Valor da viagem inválido" )
+}
+
+let  valorSobraCliente  =  valor  -  valorViagem 
+if ( valorSobraCliente  <  0 ) {
+  valorSobraCliente  =   valorSobraCliente  *  - 1
+  alert ( `Infelizmente você não tem saldo suficiente para fazer a viagem: falta ${  valorSobraCliente . toLocaleString ( 'pt-br' , { style : 'currency' ,  currency : 'BRL' } )  } ` )
+}
+senão {
+  alert ( `Parabéns ${ nome } , você irá conseguir fazer a viagem eo seu troco é de: ${  valorSobraCliente . toLocaleString ( 'pt-br' , { style : 'currency' ,  currency : 'BRL' } )  } ` )
+}
+
+</script>
