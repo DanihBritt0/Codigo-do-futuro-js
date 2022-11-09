@@ -1,0 +1,35 @@
+<script>
+var  sistemaDeAlunos  =  [ ]
+var  finalizarNota  =  ""
+
+enquanto ( prompt
+( `Para realizar novo cadastro.
+Digite: 1
+Para sair ou consultar o relatório pressione Enter` )  ==  "1" ) {
+    let  aluno  =  { nome : "" ,  matrícula : "" ,  notas : [ ] ,  media : 0 ,  aprovacao : "" }
+    deixe  mediaDoAluno  =  0
+    aluno . nome  =  prompt ( "Digite o nome do aluno:" )
+    aluno . matrícula  =  prompt ( "Digite o número da matrícula:" )
+    fazer  {
+        aluno . notas . push ( Numero ( prompt ( "Digite sua nota" ) ) )
+        finalizandoNota  =  prompt
+        ( `Caso tenha mais notas clique OK. Caso não digite - n` )
+    } 
+    while ( finalizandoNota  !==  "n" )
+    for  ( let  i  =  0 ;  i  <  aluno . notas . length ;  i ++ )  {
+        mediaDoAluno  =  mediaDoAluno  +  aluno . notas [ eu ]
+    }
+    aluno . media  =  ( mediaDoAluno / aluno . notas . length ) . para Fixo ( 2 )
+    if ( aluno . media  >=  7 ) {
+        aluno . aprovacao  =  "Aprovado"
+    } else  if ( aluno . media  <  7  &&  aluno . media  >  5 ) {
+        aluno . aprovacao  =  "Recuperacao"
+    } else {
+        aluno . aprovacao  =  "Reprovado"
+    }
+    sistemaDeAlunos . empurrar ( aluno )
+}
+alert ( "O relatório será impresso no console" )
+consola . log ( sistemaDeAlunos )
+
+</script>
